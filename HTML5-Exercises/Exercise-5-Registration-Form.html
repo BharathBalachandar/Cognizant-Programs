@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Registration Form</title>
+
+    <style>
+
+        form{
+            width:400px;
+            padding:20px;
+            border:1px solid black;
+        }
+
+        input, select, textarea{
+            width:100%;
+            margin-bottom:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Event Registration</h2>
+
+    <form
+    onsubmit="showMessage(); return false;">
+
+        <input
+        type="text"
+        placeholder="Enter Name"
+        required
+        autofocus>
+
+        <input
+        type="email"
+        placeholder="Enter Email"
+        required>
+
+        <input
+        type="date"
+        required>
+
+        <select required>
+
+            <option>
+                Music Festival
+            </option>
+
+            <option>
+                Dance Show
+            </option>
+
+            <option>
+                Art Workshop
+            </option>
+
+        </select>
+
+        <textarea
+        placeholder="Message">
+        </textarea>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <output id="result"></output>
+
+    <script>
+
+        function showMessage(){
+
+            document
+            .getElementById("result")
+            .innerHTML =
+            "Registration Successful";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Events</title>
+</head>
+
+<body>
+
+    <h2>Event Feedback</h2>
+
+    Phone Number:
+    <input type="text" id="phone" onblur="validatePhone()">
+
+    <br><br>
+
+    Select Event:
+    <select id="eventType" onchange="showFee()">
+        <option value="100">Music Festival</option>
+        <option value="200">Dance Show</option>
+        <option value="150">Art Workshop</option>
+    </select>
+
+    <p id="fee"></p>
+
+    <img
+    src="https://via.placeholder.com/150"
+    id="eventImage"
+    ondblclick="enlargeImage()">
+
+    <br><br>
+
+    <textarea
+    id="feedback"
+    onkeyup="countCharacters()"
+    placeholder="Enter Feedback">
+    </textarea>
+
+    <p id="charCount">Characters: 0</p>
+
+    <button onclick="submitFeedback()">
+        Submit
+    </button>
+
+    <script>
+
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if(phone.length < 10) {
+                alert("Invalid Phone Number");
+            }
+        }
+
+        function showFee() {
+
+            let fee =
+                document.getElementById("eventType").value;
+
+            document.getElementById("fee").innerHTML =
+                "Event Fee: ₹" + fee;
+        }
+
+        function submitFeedback() {
+            alert("Feedback Submitted Successfully");
+        }
+
+        function enlargeImage() {
+
+            document.getElementById("eventImage")
+            .style.width = "300px";
+        }
+
+        function countCharacters() {
+
+            let count =
+                document.getElementById("feedback")
+                .value.length;
+
+            document.getElementById("charCount")
+            .innerHTML =
+                "Characters: " + count;
+        }
+
+    </script>
+
+</body>
+
+</html>
